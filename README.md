@@ -1,5 +1,5 @@
 # Statement
-The algorithm is modified twice on the basis of the original program which from https://github.com/michuanhaohao/AlignedReID.
+The algorithm is modified on the basis of the original program which comes from https://github.com/michuanhaohao/AlignedReID.
 
 # AlignedReID++ (Pattern Recognition)
 Alignedreid++: Dynamically Matching Local Information for Person Re-Identification.
