@@ -1,0 +1,10 @@
+python3.7.8
+
+pytorch0.4.0
+torchvision0.2.1
+
+numpy
+scipy
+cv2
+PIL
+IPython
