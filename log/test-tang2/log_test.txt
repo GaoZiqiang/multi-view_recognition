@@ -1,0 +1,34 @@
+==========
+Args:Namespace(arch='resnet50', cuhk03_classic_split=False, cuhk03_labeled=False, dataset='market1501', eval_step=-1, evaluate=True, gamma=0.1, gpu_devices='0', height=256, htri_only=False, labelsmooth=False, lr=0.0002, margin=0.3, max_epoch=300, num_instances=4, optim='adam', print_freq=10, reranking=False, resume='', root='data', save_dir='log/test-tang2', seed=1, split_id=0, start_epoch=0, start_eval=0, stepsize=150, test_batch=32, test_distance='global_local', train_batch=32, unaligned=False, use_cpu=False, use_metric_cuhk03=False, weight_decay=0.0005, width=128, workers=4)
+==========
+Currently using CPU (GPU is highly recommended)
+Initializing dataset market1501
+=> Market1501 loaded
+Dataset statistics:
+  ------------------------------
+  subset   | # ids | # images
+  ------------------------------
+  train    |   751 |    12936
+  query    |     1 |        6
+  gallery  |     2 |       11
+  ------------------------------
+  total    |   752 |    12953
+  ------------------------------
+Initializing model: resnet50
+Model size: 25.31320M
+Evaluate only
+Extracted features for query set, obtained 6-by-2048 matrix
+Extracted features for gallery set, obtained 11-by-2048 matrix
+==> BatchTime(s)/BatchSize(img): 0.980/32
+Only using global branch
+Computing local distance...
+Matrix part (1, 1) / (1, 1), +0.00s, total 0.00s
+Using global and local branches
+Computing CMC and mAP
+Note: number of gallery samples is quite small, got 11
+Results ----------
+mAP: 100.0%
+CMC curve
+Rank-1  : 100.0%
+Rank-5  : 100.0%
+Rank-10 : 100.0%

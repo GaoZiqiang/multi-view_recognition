@@ -1,0 +1,5 @@
+==========
+Args:Namespace(arch='resnet50', cuhk03_classic_split=False, cuhk03_labeled=False, dataset='cuhk03', eval_step=-1, evaluate=True, gamma=0.1, gpu_devices='0', height=256, htri_only=False, labelsmooth=False, lr=0.0002, margin=0.3, max_epoch=300, num_instances=4, optim='adam', print_freq=10, reranking=False, resume='YOUR_MODEL_PATH', root='data', save_dir='log/resnet50-cuhk03-alignedreid', seed=1, split_id=0, start_epoch=0, start_eval=0, stepsize=150, test_batch=32, test_distance='global_local', train_batch=32, unaligned=False, use_cpu=False, use_metric_cuhk03=False, weight_decay=0.0005, width=128, workers=4)
+==========
+Currently using CPU (GPU is highly recommended)
+Initializing dataset cuhk03
