@@ -29,7 +29,7 @@ class HorizontalMaxPool2d(nn.Module):
 class ResNet50(nn.Module):
     # param@metric:metric表示度量学习
     # param@aligned:表示进行局部特征提取，添加一个local分支
-    def __init__(self, num_classes, loss={'softmax'}, aligned=False, **kwargs):
+    def __init__(self, num_classes, loss={'metric'}, aligned=False, **kwargs):
         super(ResNet50, self).__init__()
 
         # 对不同的loss要做不同的处理 比如有softmax、metric　loss
@@ -54,7 +54,7 @@ class ResNet50(nn.Module):
         x = self.base(x)
         # 只进行测试，使用local分支
         if not self.training:
-            lf = self.horizon_pool(x)
+            lf = self.horizon_pool(x)# lf:local feature f:feature
         # 启用local分支进行训练
         if self.aligned and self.training:
             lf = self.bn(x)
@@ -134,8 +134,11 @@ class ResNet101(nn.Module):
 # 验证测试
 if __name__ == '__main__':
     # 实例化ResNet50类的一个实例
-    model = ResNet50(num_classes=751,aligned=True)
-    imgs = torch.Tensor(32,3,256,128)
-    f = model(imgs)
-    from IPython import embed
-    embed()
+    model = ResNet50(num_classes=8)
+    # imgs = torch.Tensor(1,3,256,128)
+    # f = model(imgs)
+    # from IPython import embed
+    # embed()
+
+    resnet = torch.jit.trace(model, torch.rand(1, 3, 128, 64))
+    resnet.save('modified_resnet.pt')
