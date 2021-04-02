@@ -4,6 +4,7 @@ import numpy as np
 
 import torch
 from torch.utils.data.sampler import Sampler
+from IPython import embed
 '''
 图像处理类，对每个pid取四张不同序列号的图像，形成列表res[]
 
@@ -26,7 +27,9 @@ class RandomIdentitySampler(Sampler):
         self.num_instances = num_instances
         # index_dic是个字典，key为pid，value为该pid对应的图像的序列号（即index）
         self.index_dic = defaultdict(list)#　收集图像的序列号index（顺序号）放在index_dic
+        # embed()
         for index, (_, pid, _) in enumerate(data_source):
+            embed()
             self.index_dic[pid].append(index)
         # 将pid整合到一个list中
         self.pids = list(self.index_dic.keys())
