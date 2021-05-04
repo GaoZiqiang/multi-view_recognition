@@ -26,7 +26,7 @@ import numpy as np
 parser = argparse.ArgumentParser(description='Train AlignedReID with cross entropy loss and triplet hard loss')
 # Datasets
 parser.add_argument('--root', type=str, default='data', help="root path to data directory")
-parser.add_argument('-d', '--dataset', type=str, default='market1501',
+parser.add_argument('-d', '--dataset', type=str, default='mars',
                     choices=data_manager.get_names())
 parser.add_argument('-j', '--workers', default=4, type=int,
                     help="number of data loading workers (default: 4)")
