@@ -34,7 +34,7 @@ def main():
 
     # 第二个参数：queryloader
     queryloader = DataLoader(
-        # 问题：dataset.query哪里来的？
+        # 问题：dataset.query哪里来的？ 答：来自dataset = data_manager.Market1501(root='data')
         ImageDataset(dataset.query, transform=transform_test),
         batch_size=32, shuffle=False, num_workers=4,
         pin_memory=pin_memory, drop_last=False,
